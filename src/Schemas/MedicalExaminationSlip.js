@@ -1,0 +1,33 @@
+import Joi from "joi";
+const medicineExaminationSlipValidate = Joi.object({
+  _id: Joi.string(),
+  customerId: Joi.any(),
+  doctorId: Joi.any(),
+  symptom: Joi.any(),
+  status: Joi.string().required().trim().messages({
+    "string.empty": "Trạng thái phiếu khám không được để trống",
+    "any.required": "Trường Trạng thái phiếu khám là bắt buộc!",
+  }),
+  staffId: Joi.any(),
+  clinicId: Joi.any(),
+  day_booking: Joi.any(),
+  day_cancel: Joi.any(),
+  day_done: Joi.any(),
+  day_examination: Joi.any(),
+  day_welcome: Joi.any(),
+  day_request_cancel: Joi.any(),
+  medicalHistory: Joi.any(),
+  note: Joi.any(),
+  conclude: Joi.any(),
+  diagnostic: Joi.any(),
+  advice: Joi.any(),
+  treatmentInstructions: Joi.any(),
+  waitingCode: Joi.any(),
+  cancel_reason: Joi.any(),
+  day_running: Joi.any(),
+  createdAt: Joi.any(),
+  updatedAt: Joi.any(),
+  cancel_requester: Joi.any(),
+  examinationServiceId: Joi.any(),
+});
+export default medicineExaminationSlipValidate;
